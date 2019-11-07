@@ -1,4 +1,3 @@
-#pragma once
 #define _USE_MATH_DEFINES
 
 #include <math.h>
@@ -8,7 +7,7 @@ using namespace std;
 const static double EarthRadiusKm = 6372.8;
 
 inline double DegreeToRadian(double angle) {
-    return M_PI * angle / 180.0;
+    return 3.14159265358 * angle / 180.0;
 }
 
 class Coordinate {

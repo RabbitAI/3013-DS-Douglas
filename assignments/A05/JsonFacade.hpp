@@ -9,7 +9,6 @@
  * For our purposes it assumes an array of objects. I might expand on it later but doubt
  * it. If you are interested, learn how to use the original in many much more powerful ways.
  */
-#pragma once
 #include <iomanip>
 #include <fstream>
 #include <iostream>

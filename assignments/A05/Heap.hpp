@@ -8,7 +8,7 @@
 // Description:
 //       Min or Max Heap implementation
 /////////////////////////////////////////////////////////////////////////////////
-#pragma once
+
 #include <iostream>
 #include <math.h>
 
@@ -26,14 +26,15 @@ using namespace std;
  *    bool Empty()
  *    void Heapify(int*,int)
  */
-template <typename T> 
-class Heap {
+template <typename T>
+class Heap
+{
 private:
-    T **Array;       // Pointer to allocate dynamic array
-    int Next;        // Next available location
-    int MaxSize;     // Max size since were using array
-    int HeapSize;    // Actual number of items in the array.
-    bool isMax;      // true = max heap false = min
+    T **Array;    // Pointer to allocate dynamic array
+    int Next;     // Next available location
+    int MaxSize;  // Max size since were using array
+    int HeapSize; // Actual number of items in the array.
+    bool isMax;   // true = max heap false = min
 
     /**
      * Function IncreaseKey:
@@ -44,22 +45,27 @@ private:
      * Returns
      *      void
      */
-    void BubbleUp(int i) {
+    void BubbleUp(int i)
+    {
         int p = Parent(i);
-        if(isMax){
-            while (p > 0 && Array[i]->Priority > Array[p]->Priority) {
-                Swap(i, p);
-                i = p;
-                p = Parent(i);
-            }
-        }else{
-            while (p > 0 && Array[i]->Priority < Array[p]->Priority) {
+        if (isMax)
+        {
+            while (p > 0 && Array[i]->Priority > Array[p]->Priority)
+            {
                 Swap(i, p);
                 i = p;
                 p = Parent(i);
             }
         }
-
+        else
+        {
+            while (p > 0 && Array[i]->Priority < Array[p]->Priority)
+            {
+                Swap(i, p);
+                i = p;
+                p = Parent(i);
+            }
+        }
     }
 
     /**
@@ -71,28 +77,38 @@ private:
      * Returns
      *      void
      */
-    void BubbleDown(int i) {
+    void BubbleDown(int i)
+    {
         int c = PickChild(i);
 
-        while (c > 0) {
-            if(isMax){
-                if (Array[i]->Priority < Array[c]->Priority) {
+        while (c > 0)
+        {
+            if (isMax)
+            {
+                if (Array[i]->Priority < Array[c]->Priority)
+                {
                     Swap(i, c);
                     i = c;
                     c = PickChild(i);
-                } else {
-                    c = -1;
                 }
-            }else{
-                if (Array[i]->Priority > Array[c]->Priority) {
-                    Swap(i, c);
-                    i = c;
-                    c = PickChild(i);
-                } else {
+                else
+                {
                     c = -1;
                 }
             }
-
+            else
+            {
+                if (Array[i]->Priority > Array[c]->Priority)
+                {
+                    Swap(i, c);
+                    i = c;
+                    c = PickChild(i);
+                }
+                else
+                {
+                    c = -1;
+                }
+            }
         }
     }
 
@@ -106,8 +122,9 @@ private:
      * Returns
      *      void
      */
-    void Swap(int p, int i) {
-        T* temp = Array[p];
+    void Swap(int p, int i)
+    {
+        T *temp = Array[p];
         Array[p] = Array[i];
         Array[i] = temp;
     }
@@ -121,7 +138,8 @@ private:
      * Returns
      *      index [int]
      */
-    int Parent(int i) {
+    int Parent(int i)
+    {
         return int(i / 2);
     }
 
@@ -134,7 +152,8 @@ private:
      * Returns
      *      [int] index - left child index
      */
-    int LeftChild(int i) {
+    int LeftChild(int i)
+    {
         return i * 2;
     }
 
@@ -147,7 +166,8 @@ private:
      * Returns
      *      [int] index - right child index
      */
-    int RightChild(int i) {
+    int RightChild(int i)
+    {
         return i * 2 + 1;
     }
 
@@ -160,29 +180,44 @@ private:
      * Returns
      *      [int] index - index to swap with or -1 to not swap
      */
-    int PickChild(int i) {
-        if (RightChild(i) >= Next) {    //No right child
-            if (LeftChild(i) >= Next) { //No left child
+    int PickChild(int i)
+    {
+        if (RightChild(i) >= Next)
+        { //No right child
+            if (LeftChild(i) >= Next)
+            { //No left child
                 return -1;
-            } else { //you have a left no right
+            }
+            else
+            { //you have a left no right
                 return LeftChild(i);
             }
-        } else {
+        }
+        else
+        {
             //right child exists
-            if(isMax){
-                if (Array[RightChild(i)]->Priority > Array[LeftChild(i)]->Priority) {
+            if (isMax)
+            {
+                if (Array[RightChild(i)]->Priority > Array[LeftChild(i)]->Priority)
+                {
                     return RightChild(i);
-                } else {
+                }
+                else
+                {
                     return LeftChild(i);
                 }
-            }else{
-                if (Array[RightChild(i)]->Priority < Array[LeftChild(i)]->Priority) {
-                    return RightChild(i);
-                } else {
-                    return LeftChild(i);
-                }   
             }
-
+            else
+            {
+                if (Array[RightChild(i)]->Priority < Array[LeftChild(i)]->Priority)
+                {
+                    return RightChild(i);
+                }
+                else
+                {
+                    return LeftChild(i);
+                }
+            }
         }
     }
 
@@ -197,8 +232,9 @@ public:
      * Returns
      *      void
      */
-    Heap(int size,bool max = true) {
-        Array = new T*[size];
+    Heap(int size, bool max = true)
+    {
+        Array = new T *[size];
         Next = 1;
         MaxSize = size;
         HeapSize = 0;
@@ -214,7 +250,8 @@ public:
      * Returns
      *      void
      */
-    void Insert(T* x) {
+    void Insert(T *x)
+    {
         Array[Next] = x;
         BubbleUp(Next);
         Next++;
@@ -230,17 +267,20 @@ public:
      * Returns
      *      [T] top_value - top value in the heap (min or max)
      */
-    T* Extract() {
+    T *Extract()
+    {
 
-        if (Empty()) {
+        if (Empty())
+        {
             return NULL;
         }
 
-        T* retval = Array[1];
+        T *retval = Array[1];
         Array[1] = Array[--Next];
         HeapSize--;
 
-        if (HeapSize > 1) {
+        if (HeapSize > 1)
+        {
             BubbleDown(1);
         }
 
@@ -257,8 +297,10 @@ public:
      * Returns
      *      void
      */
-    void PrintHeap() {
-        for (int i = 1; i < Next; i++) {
+    void PrintHeap()
+    {
+        for (int i = 1; i < Next; i++)
+        {
             cout << Array[i] << " ";
         }
         cout << endl;
@@ -273,7 +315,8 @@ public:
      * Returns
      *      [int] heapSize - size of heap
      */
-    int Size() {
+    int Size()
+    {
         return Next - 1;
     }
 
@@ -286,7 +329,8 @@ public:
      * Returns
      *      [bool] empty - is array empty
      */
-    bool Empty() {
+    bool Empty()
+    {
         return Next == 1;
     }
 
@@ -300,16 +344,23 @@ public:
      * Returns
      *      void
      */
-    void Heapify(T **&A, int size) {
+    void Heapify(T **&A, int size)
+    {
         int i = size / 2;
         Array = A;
         Next = size;
         HeapSize = size - 1;
 
-        for (int j = i; j >= 1; j--) {
+        for (int j = i; j >= 1; j--)
+        {
             BubbleDown(j);
         }
     }
+    void emptyHeap()
+    {
+        delete[] Array;
+        Array = new T *[MaxSize];
+        Next = 1;
+        HeapSize = 0;
+    }
 };
-
-

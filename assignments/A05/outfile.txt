@@ -1,0 +1,82 @@
+Christian Douglas 
+
+1 : New York
+1) Hoboken (4.124 km)
+2) Jersey City (6.281 km)
+3) West New York (8.382 km)
+2 : Los Angeles
+1) Huntington Park (8.033 km)
+2) Glendale (10.1 km)
+3) Monterey Park (11.19 km)
+3 : Chicago
+1) Cicero (10.9 km)
+2) Oak Park (12.83 km)
+3) Berwyn (13.91 km)
+4 : Houston
+1) Pasadena (17.33 km)
+2) Missouri City (22.63 km)
+3) Pearland (23.34 km)
+5 : Philadelphia
+1) Camden (4.889 km)
+2) Wilmington (39.84 km)
+3) Trenton (46.44 km)
+6 : Phoenix
+1) Tempe (12.7 km)
+2) Glendale (14.44 km)
+3) Scottsdale (14.64 km)
+7 : San Antonio
+1) New Braunfels (47.31 km)
+2) San Marcos (73.87 km)
+3) Austin (118.5 km)
+8 : San Diego
+1) National City (7.147 km)
+2) Chula Vista (11.08 km)
+3) La Mesa (14.15 km)
+9 : Dallas
+1) Irving (14.8 km)
+2) Duncanville (17.36 km)
+3) Mesquite (18.53 km)
+10 : San Jose
+1) Santa Clara (6.344 km)
+2) Campbell (7.995 km)
+3) Milpitas (10.53 km)
+991 : Aventura
+1) Hallandale Beach (2.898 km)
+2) North Miami Beach (3.49 km)
+3) Hollywood (6.172 km)
+992 : Martinez
+1) Concord (10.14 km)
+2) Walnut Creek (13.58 km)
+3) Vallejo (14.28 km)
+993 : Greenfield
+1) West Allis (6.165 km)
+2) New Berlin (7.976 km)
+3) Wauwatosa (9.802 km)
+994 : Apache Junction
+1) Gilbert (23.29 km)
+2) Mesa (26.17 km)
+3) Chandler (29.68 km)
+995 : Monrovia
+1) Arcadia (3.115 km)
+2) Baldwin Park (7.571 km)
+3) El Monte (8.738 km)
+996 : Weslaco
+1) Pharr (19.64 km)
+2) Edinburg (23.38 km)
+3) McAllen (24.37 km)
+997 : Keizer
+1) Salem (5.299 km)
+2) Albany (39.83 km)
+3) Corvallis (50.86 km)
+998 : Spanish Fork
+1) Provo (13.23 km)
+2) Orem (20.52 km)
+3) Lehi (34.98 km)
+999 : Beloit
+1) Janesville (19.43 km)
+2) Rockford (26.88 km)
+3) Crystal Lake (65.88 km)
+1000 : Panama City
+1) Dothan (121.2 km)
+2) Tallahassee (136.1 km)
+3) Pensacola (152.3 km)
