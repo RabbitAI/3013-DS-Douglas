@@ -1,5 +1,5 @@
 /**
- * Name: Christian Douglas
+ * Name: 
  * Date: 4 October, 2019
  * Course: CMPS 3013
  * Program: A03
